@@ -1,0 +1,120 @@
+.wrap {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+}
+
+.outer {
+  flex: 1;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: url('../img/bg-index.jpg') right;
+    background-size: cover;
+    opacity: 0.3;
+  }
+}
+
+.contain-box {
+  width: 100%;
+  height: calc(100vh - 50px - 100px - 70px - 50px);
+  overflow: auto;
+}
+
+.contain {
+  padding: 0 20px;
+  width: calc(100vw - 40px);
+  min-width: 1080px;
+}
+
+.step {
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.article {
+  padding: 0 20px;
+}
+
+.step-title {
+  margin: 20px 0;
+  color: $primary-color-master;
+  font-weight: bold;
+}
+
+select,
+input[type='number'],
+input[type='text'] {
+  padding: 4px;
+}
+
+select {
+  width: 200px;
+}
+
+input,
+select {
+  &:focus {
+    outline: unset;
+  }
+}
+
+input[type='number'] {
+  border: 1px solid $dark-200;
+}
+
+input[type='number'].size-l {
+  width: 200px;
+}
+
+input[type='text'] {
+  border: 1px solid $dark-200;
+  background-color: $dark-500;
+}
+
+input[type='file'] {
+  display: none;
+}
+
+input.input-border {
+  background-color: unset;
+  border: 0.5px solid $dark-200;
+}
+
+input.input-underline {
+  background-color: unset;
+  border: unset;
+  border-bottom: 1px solid;
+}
+
+input.primary:disabled {
+  color: $dark-300;
+  border-color: $dark-300;
+}
+
+.red-icon {
+  display: inline-block;
+  font-weight: bolder;
+  font-size: 13px;
+  color: $primary-color-second;
+  border: 2px solid $primary-color-second;
+  border-radius: 50%;
+  margin-left: 2px;
+}
+
+.mb-4 {
+  margin-bottom: 4px;
+}
+
+.mb-10 {
+  margin-bottom: 10px;
+}
