@@ -13,15 +13,20 @@ export const CONTEST_TYPE = {
 
 export const CONTEST_VALUE = Object.keys(CONTEST_TYPE).map((key) => CONTEST_TYPE[key].id);
 
-export const GAME_TYPE = {
-  NONE: 'NONE',
-  WIN: 'WIN',
-  LOSE: 'LOSE',
+export const UNIT_TYPE = {
+  TIME: {
+    ch: '時間',
+    id: 'TIME'
+  },
+  DISTANCE: {
+    ch: '距離',
+    id: 'DISTANCE'
+  },
 };
 
-export const MAX_EXPONENT = 6;
+export const GAME_TYPE = {  }
 
-export const NO_SCORE = -1;
+export const NO_SCORE = '';
 export const NO_ID = -1;
 export const NO_PLAYER = 'none';
 export const GROUP_DEFAULT = 1;
