@@ -4,7 +4,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 // use file on desktop
 // import { createRouter, createWebHashHistory } from 'vue-router';
 import Home from '../views/Home.vue';
-// import StepOne from "../views/StepOne.vue";
+import StepOne from '../views/StepOne.vue';
 // import StepTwo from "../views/StepTwo.vue";
 // import StepThree from "../views/StepThree.vue";
 // import PrintContest from "../views/PrintContest.vue";
@@ -15,11 +15,11 @@ const routes = [
     name: 'Home',
     component: Home,
   },
-  // {
-  //   path: "/step_one",
-  //   name: "StepOne",
-  //   component: StepOne,
-  // },
+  {
+    path: '/step_one',
+    name: 'StepOne',
+    component: StepOne,
+  },
   // {
   //   path: "/step_two",
   //   name: "StepTwo",
