@@ -8,6 +8,7 @@
           <h3 class="step-title">1.1/選擇賽制與隊伍數</h3>
 
           <div>Step one</div>
+          <ContestInfo />
         </div>
       </div>
     </div>
@@ -19,8 +20,9 @@
 import Header from '../components/Header.vue';
 import Footer from '../components/Footer.vue';
 import StepLine from '../components/StepLine.vue';
+import ContestInfo from '../components/StepOne/ContestInfo.vue';
 
 export default {
-  components: { Header, Footer, StepLine },
+  components: { Header, Footer, StepLine, ContestInfo },
 };
 </script>
