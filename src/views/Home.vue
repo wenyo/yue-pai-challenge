@@ -1,7 +1,7 @@
 <template>
   <div class="home wrap">
     <!-- change image -->
-    <img class="rabbit" src="../assets/img/rabbit.png" alt="rabbit background" />
+    <img class="cat" src="../assets/img/cat.png" alt="cat background" />
     <img class="exclamation" src="../assets/img/exclamation_mark.svg" alt="exclamation mark" />
     <div class="home-contain">
       <div class="logo">
@@ -53,13 +53,13 @@ export default {
   overflow: hidden;
 }
 
-.rabbit {
+.cat {
   position: absolute;
   z-index: 1;
-  width: 40%;
+  width: 55%;
   min-width: 500px;
   top: 50%;
-  left: 60%;
+  left: 45%;
   transform: translateY(-50%);
 }
 
