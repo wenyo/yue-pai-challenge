@@ -9,10 +9,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "lodash": "^4.17.21",
     "node-sass": "^8.0.0",
     "prettier": "^2.8.1",
     "prettier-eslint": "^15.0.1",
     "sass-loader": "^13.2.0",
+    "vee-validate": "^4.7.3",
     "vue": "^3.2.41",
     "vue-router": "^4.1.6",
     "vuex": "^4.1.0"

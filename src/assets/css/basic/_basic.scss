@@ -54,11 +54,8 @@
 select,
 input[type='number'],
 input[type='text'] {
-  padding: 4px;
-}
-
-select {
   width: 200px;
+  padding: 4px;
 }
 
 input,
@@ -117,4 +114,8 @@ input.primary:disabled {
 
 .mb-10 {
   margin-bottom: 10px;
+}
+
+.error-message {
+  color: $primary-color-second;
 }

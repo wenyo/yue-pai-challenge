@@ -24,7 +24,17 @@ export const UNIT_TYPE = {
   },
 };
 
-export const GAME_TYPE = {  }
+export const GAME_TYPE = {}
+export const CONTEST_MODE = { 
+  INDIVIDUAL: {
+    ch: '個人',
+    id: 2,
+  },
+  GROUP: {
+    ch: '團體',
+    id: 1,
+  },
+}
 
 export const NO_SCORE = '';
 export const NO_ID = -1;
@@ -57,3 +67,8 @@ export const STEP_IDX = {
   TWO: 2,
   THREE: 3,
 };
+
+export const ERROR_MESSAGE = {
+  isRequired: '必填',
+  naturalNumber: '須為正整數'
+}

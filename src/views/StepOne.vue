@@ -6,8 +6,6 @@
       <div class="contain-box">
         <div class="contain">
           <h3 class="step-title">1.1/選擇賽制與隊伍數</h3>
-
-          <div>Step one</div>
           <ContestInfo />
         </div>
       </div>

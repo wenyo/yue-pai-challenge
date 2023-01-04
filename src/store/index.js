@@ -5,7 +5,7 @@ const store = createStore({
     type: '', // CONTEST_TYPE
     contestName: '',
     unit: '', // UNIT_TYPE
-    logoImg: '',
+    imgBase64: '',
     gameDetail: [
       {
         type: '', // GAME_TYPE
@@ -38,6 +38,11 @@ const store = createStore({
         },
       ],
     ],
+  },
+  mutations: {
+    imgBase64Change(state, { img }) {
+      state.imgBase64 = img;
+    },
   },
 });
 

@@ -5,12 +5,12 @@
 </template>
 
 <script>
-import { BUTTON_TYPE } from "../utils/Enum";
+import { BUTTON_TYPE } from '../utils/Enum';
 export default {
   props: {
     name: {
       type: String,
-      default: "",
+      default: '',
     },
     type: {
       type: String,
