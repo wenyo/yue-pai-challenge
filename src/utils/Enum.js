@@ -59,6 +59,7 @@ export const BUTTON_TYPE = {
   THIRD: 'third',
   FORTH: 'forth',
   FIVE: 'five',
+  SIX: 'six',
 };
 
 export const STEP_IDX = {

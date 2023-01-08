@@ -116,6 +116,19 @@ input.primary:disabled {
   margin-bottom: 10px;
 }
 
+form {
+  display: inline-flex;
+  position: relative;
+
+  .error-message {
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    transform: translateY(100%);
+  }
+}
+
 .error-message {
   color: $primary-color-second;
+  font-size: 12px;
 }

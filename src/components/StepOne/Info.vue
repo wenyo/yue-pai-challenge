@@ -1,33 +1,43 @@
 <template>
   <div class="contest-info">
-    <Form>
-      <span>賽事類型</span>
-      <select name="" id="">
-        <option v-for="(type, key) in CONTEST_TYPE" :value="key" :key="key">{{ type.ch }}</option>
-      </select>
-    </Form>
-    <Form>
-      <span>賽事模式</span>
-      <select name="" id="">
-        <option v-for="(mode, key) in CONTEST_MODE" :value="key" :key="key">{{ mode.ch }}</option>
-      </select>
-    </Form>
-    <Form>
-      <span>賽事名稱</span>
-      <Field type="text" name="name" :rules="isRequired" />
-      <ErrorMessage class="error-message" name="name" />
-    </Form>
-    <Form>
-      <span>參賽人數/隊伍</span>
-      <Field type="number" name="count" min="0" :rules="isRequired && isNaturalNumber" />
-      <ErrorMessage class="error-message" name="count" />
-    </Form>
-    <Form>
-      <span>成績單位</span>
-      <select name="" id="">
-        <option v-for="(unit, key) in UNIT_TYPE" :value="key" :key="key">{{ unit.ch }}</option>
-      </select>
-    </Form>
+    <div>
+      <Form>
+        <span>賽事類型</span>
+        <select name="" id="">
+          <option v-for="(type, key) in CONTEST_TYPE" :value="key" :key="key">{{ type.ch }}</option>
+        </select>
+      </Form>
+    </div>
+    <div>
+      <Form>
+        <span>賽事模式</span>
+        <select name="" id="">
+          <option v-for="(mode, key) in CONTEST_MODE" :value="key" :key="key">{{ mode.ch }}</option>
+        </select>
+      </Form>
+    </div>
+    <div>
+      <Form>
+        <span>賽事名稱</span>
+        <Field type="text" name="name" :rules="isRequired" />
+        <ErrorMessage class="error-message" name="name" />
+      </Form>
+    </div>
+    <div>
+      <Form>
+        <span>參賽人數/隊伍</span>
+        <Field type="number" name="count" min="0" :rules="isRequired && isNaturalNumber" />
+        <ErrorMessage class="error-message" name="count" />
+      </Form>
+    </div>
+    <div>
+      <Form>
+        <span>成績單位</span>
+        <select name="" id="">
+          <option v-for="(unit, key) in UNIT_TYPE" :value="key" :key="key">{{ unit.ch }}</option>
+        </select>
+      </Form>
+    </div>
     <label class="file-block">
       <span @click="() => uploadImage.click()">LOGO</span>
       <div class="file">

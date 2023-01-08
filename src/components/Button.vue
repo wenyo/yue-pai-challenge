@@ -68,4 +68,13 @@ button {
 .five {
   background-color: $primary-color-five;
 }
+.six {
+  border: unset;
+  color: $dark-200;
+  padding: 5px;
+
+  &:hover {
+    color: $dark-100;
+  }
+}
 </style>
