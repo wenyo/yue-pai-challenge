@@ -1,5 +1,5 @@
 <template>
-  <div class="contest-left">
+  <div class="contest-info">
     <Form>
       <span>賽事類型</span>
       <select name="" id="">
@@ -19,7 +19,7 @@
     </Form>
     <Form>
       <span>參賽人數/隊伍</span>
-      <Field type="number" name="count" min="0" :rules="isRequired && naturalNumber" />
+      <Field type="number" name="count" min="0" :rules="isRequired && isNaturalNumber" />
       <ErrorMessage class="error-message" name="count" />
     </Form>
     <Form>
@@ -96,7 +96,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.contest-left {
+.contest-info {
   display: flex;
   gap: 20px;
 

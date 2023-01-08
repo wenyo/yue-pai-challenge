@@ -6,7 +6,8 @@
       <div class="contain-box">
         <div class="contain">
           <h3 class="step-title">1.1/選擇賽制與隊伍數</h3>
-          <ContestInfo />
+          <Info />
+          <Setting />
         </div>
       </div>
     </div>
@@ -18,9 +19,10 @@
 import Header from '../components/Header.vue';
 import Footer from '../components/Footer.vue';
 import StepLine from '../components/StepLine.vue';
-import ContestInfo from '../components/StepOne/ContestInfo.vue';
+import Info from '../components/StepOne/Info.vue';
+import Setting from '../components/StepOne/Setting.vue';
 
 export default {
-  components: { Header, Footer, StepLine, ContestInfo },
+  components: { Header, Footer, StepLine, Info, Setting },
 };
 </script>

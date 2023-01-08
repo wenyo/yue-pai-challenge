@@ -8,15 +8,15 @@ export function isRequired(value) {
   return ERROR_MESSAGE.isRequired;
 }
 
-export function naturalNumber(value) {
+export function isNaturalNumber(value) {
   const valInt = _.toNumber(value);
   if (typeof valInt === 'number' && valInt > 0 && _.isInteger(valInt)) {
     return true;
   }
-  return ERROR_MESSAGE.naturalNumber;
+  return ERROR_MESSAGE.isNaturalNumber;
 }
 
 export default {
   isRequired,
-  naturalNumber,
+  isNaturalNumber,
 };

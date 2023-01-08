@@ -16,16 +16,16 @@ export const CONTEST_VALUE = Object.keys(CONTEST_TYPE).map((key) => CONTEST_TYPE
 export const UNIT_TYPE = {
   TIME: {
     ch: '時間',
-    id: 'TIME'
+    id: 'TIME',
   },
   DISTANCE: {
     ch: '距離',
-    id: 'DISTANCE'
+    id: 'DISTANCE',
   },
 };
 
-export const GAME_TYPE = {}
-export const CONTEST_MODE = { 
+export const GAME_TYPE = {};
+export const CONTEST_MODE = {
   INDIVIDUAL: {
     ch: '個人',
     id: 2,
@@ -34,7 +34,7 @@ export const CONTEST_MODE = {
     ch: '團體',
     id: 1,
   },
-}
+};
 
 export const NO_SCORE = '';
 export const NO_ID = -1;
@@ -51,8 +51,7 @@ export const TEAM_FORM = {
   name: '',
 };
 
-export const GAME_FORM = {
-};
+export const GAME_FORM = {};
 
 export const BUTTON_TYPE = {
   MASTER: 'master',
@@ -70,5 +69,5 @@ export const STEP_IDX = {
 
 export const ERROR_MESSAGE = {
   isRequired: '必填',
-  naturalNumber: '須為正整數'
-}
+  isNaturalNumber: '須為正整數',
+};
