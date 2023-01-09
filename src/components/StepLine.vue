@@ -1,16 +1,16 @@
 <template>
   <ul>
-    <template v-for="idx in Object.values(STEP_IDX)" :key="idx">
-      <li v-if="nowStep === idx" class="now-step"></li>
-      <li :class="{ 'prev-step': nowStep > idx }" v-else>{{ idx }}</li>
+    <template v-for="idx in Object.values(STEP_IDX)">
+      <li v-if="nowStep === idx" class="now-step" :key="idx"></li>
+      <li :class="{ 'prev-step': nowStep > idx }" :key="idx" v-else>{{ idx }}</li>
     </template>
   </ul>
 </template>
 
 <script>
-import { STEP_IDX } from "../utils/Enum";
+import { STEP_IDX } from '../utils/Enum';
 export default {
-  props: ["nowStep"],
+  props: ['nowStep'],
   data() {
     return {
       STEP_IDX,
@@ -33,12 +33,12 @@ li {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url("../assets/img/step-bg.svg") no-repeat;
+  background: url('../assets/img/step-bg.svg') no-repeat;
   color: $dark-400;
   position: relative;
 
   &.now-step {
-    background: url("../assets/img/step-now.svg") no-repeat;
+    background: url('../assets/img/step-now.svg') no-repeat;
   }
 
   &.prev-step {
@@ -48,7 +48,7 @@ li {
 
 ul {
   & :not(:last-child)::after {
-    content: "";
+    content: '';
     width: calc(50vw - 90px);
     height: 1px;
     position: absolute;

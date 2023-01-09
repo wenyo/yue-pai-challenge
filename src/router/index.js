@@ -5,7 +5,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 // import { createRouter, createWebHashHistory } from 'vue-router';
 import Home from '../views/Home.vue';
 import StepOne from '../views/StepOne.vue';
-// import StepTwo from "../views/StepTwo.vue";
+import StepTwo from '../views/StepTwo.vue';
 // import StepThree from "../views/StepThree.vue";
 // import PrintContest from "../views/PrintContest.vue";
 
@@ -20,11 +20,11 @@ const routes = [
     name: 'StepOne',
     component: StepOne,
   },
-  // {
-  //   path: "/step_two",
-  //   name: "StepTwo",
-  //   component: StepTwo,
-  // },
+  {
+    path: '/step_two',
+    name: 'StepTwo',
+    component: StepTwo,
+  },
   // {
   //   path: "/step_three",
   //   name: "StepThree",

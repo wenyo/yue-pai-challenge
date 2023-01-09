@@ -4,7 +4,7 @@
       <Button :type="BUTTON_TYPE.FIVE" :click_fun="navigate">上一步</Button>
     </router-link>
     <router-link :to="nextLink" custom v-slot="{ navigate }">
-      <Button :type="BUTTON_TYPE.SECOND" :click_fun="navigate">下一步</Button>
+      <Button :type="BUTTON_TYPE.SECOND" :click_fun="navigate" :disabled="nextDisable">下一步</Button>
     </router-link>
   </div>
 </template>
@@ -22,6 +22,10 @@ export default {
     nextLink: {
       type: String,
       default: '/',
+    },
+    nextDisable: {
+      type: Boolean,
+      default: false,
     },
   },
   data() {
