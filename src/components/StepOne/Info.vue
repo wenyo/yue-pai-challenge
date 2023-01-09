@@ -1,52 +1,52 @@
 <template>
   <div class="contest-info">
     <div>
-      <Form>
+      <label>
         <span>賽事類型</span>
         <select name="" id="" v-model="type">
           <option value="">請選擇</option>
           <option v-for="(type, key) in CONTEST_TYPE" :value="key" :key="key">{{ type.ch }}</option>
         </select>
-      </Form>
+      </label>
     </div>
     <div>
-      <Form>
+      <label>
         <span>賽事模式</span>
         <select name="" id="" v-model="mode">
           <option value="">請選擇</option>
           <option v-for="(mode, key) in CONTEST_MODE" :value="key" :key="key">{{ mode.ch }}</option>
         </select>
-      </Form>
+      </label>
     </div>
     <div>
-      <Form>
+      <label>
         <span>賽事名稱</span>
         <Field type="text" name="name" :rules="isRequired" v-model="contestName" />
         <ErrorMessage class="error-message" name="name" />
-      </Form>
+      </label>
     </div>
     <div>
-      <Form>
+      <label>
         <span>參賽人數/隊伍</span>
         <Field type="number" name="count" min="0" :rules="isRequired && isNaturalNumber" v-model="count" />
         <ErrorMessage class="error-message" name="count" />
-      </Form>
+      </label>
     </div>
     <div>
-      <Form>
+      <label>
         <span>成績單位</span>
         <select name="" id="" v-model="unit">
           <option value="">請選擇</option>
           <option v-for="(unit, key) in UNIT_TYPE" :value="key" :key="key">{{ unit.ch }}</option>
         </select>
-      </Form>
+      </label>
     </div>
     <label class="file-block">
       <span @click="() => uploadImage.click()">LOGO</span>
       <div class="file">
-        <Button class="file-input" :type="BUTTON_TYPE.FORTH" :click_fun="() => uploadImage.click()">選擇圖片</Button>
+        <Button class="file-input" :style="BUTTON_TYPE.FORTH" :click_fun="() => uploadImage.click()">選擇圖片</Button>
         <input ref="uploadImage" type="file" accept="image/*" @change="imgChange" />
-        <Button :type="BUTTON_TYPE.FIVE" :click_fun="resetImg" :disabled="!imgBase64">清除圖片</Button>
+        <Button :style="BUTTON_TYPE.FIVE" :click_fun="resetImg" :disabled="!imgBase64">清除圖片</Button>
         <img class="preview-img" :src="imgBase64" v-if="imgBase64" />
       </div>
     </label>
@@ -57,13 +57,13 @@
 import { ref } from 'vue';
 import { mapFields } from 'vuex-map-fields';
 import { mapMutations } from 'vuex';
-import { Field, Form, ErrorMessage } from 'vee-validate';
+import { Field, ErrorMessage } from 'vee-validate';
 import { CONTEST_TYPE, CONTEST_MODE, UNIT_TYPE, BUTTON_TYPE } from '../../utils/Enum';
 import ErrorMsgFunc from '../../utils/ErrorMsg';
 import Button from '../Button.vue';
 
 export default {
-  components: { Button, Field, ErrorMessage, Form },
+  components: { Button, Field, ErrorMessage },
   setup() {
     const uploadImage = ref(null);
     return { uploadImage };
@@ -114,7 +114,6 @@ export default {
   display: flex;
   gap: 20px;
 
-  form,
   label {
     display: inline-flex;
     flex-direction: column;

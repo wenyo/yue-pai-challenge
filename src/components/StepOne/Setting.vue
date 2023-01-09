@@ -10,7 +10,7 @@
       </li>
       <SettingItem v-for="(gameInfo, key) in gameDetail" :key="key" :gameInfo="gameInfo" />
     </ul>
-    <Button class="add" :type="BUTTON_TYPE.FIVE" :click_fun="() => {}">+</Button>
+    <Button class="add" :style="BUTTON_TYPE.FIVE" :click_fun="() => {}">+</Button>
   </div>
 </template>
 

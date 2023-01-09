@@ -15,7 +15,7 @@
       <div class="btn-area">
         <ReadFile />
         <router-link to="/step_one" custom v-slot="{ navigate }">
-          <Button :type="BUTTON_TYPE.SECOND" :click_fun="navigate">開新賽程</Button>
+          <Button :style="BUTTON_TYPE.SECOND" :click_fun="navigate">開新賽程</Button>
         </router-link>
       </div>
     </div>

@@ -1,31 +1,31 @@
 <template>
   <li>
-    <Form>
+    <label class="input">
       <Field type="text" name="gameName" :rules="isRequired" v-model="gameInfo.gameName" />
       <ErrorMessage class="error-message" name="gameName" />
-    </Form>
-    <Form>
+    </label>
+    <label class="input">
       <Field type="number" name="count_Q" :rules="isRequired && isNaturalNumber" v-model="gameInfo.count_Q" />
       <ErrorMessage class="error-message" name="count_Q" />
-    </Form>
-    <Form>
+    </label>
+    <label class="input">
       <Field type="number" name="count_q" :rules="isRequired && isNaturalNumber" v-model="gameInfo.count_q" />
       <ErrorMessage class="error-message" name="count_q" />
-    </Form>
-    <Form>
+    </label>
+    <label class="input">
       <Field type="number" name="teamCount" :rules="isRequired && isNaturalNumber" v-model="gameInfo.teamCount" />
       <ErrorMessage class="error-message" name="teamCount" />
-    </Form>
-    <Form>
+    </label>
+    <label class="input">
       <Field type="number" name="track" :rules="isRequired && isNaturalNumber" v-model="gameInfo.track" />
       <ErrorMessage class="error-message" name="track" />
-    </Form>
-    <Button class="delete" :type="BUTTON_TYPE.SIX" :click_fun="() => {}">x</Button>
+    </label>
+    <Button class="delete" :style="BUTTON_TYPE.SIX" :click_fun="() => {}">x</Button>
   </li>
 </template>
 
 <script>
-import { Field, Form, ErrorMessage } from 'vee-validate';
+import { Field, ErrorMessage } from 'vee-validate';
 import { BUTTON_TYPE } from '../../utils/Enum';
 import ErrorMsgFunc from '../../utils/ErrorMsg';
 import Button from '../Button.vue';
@@ -42,7 +42,7 @@ export default {
       default: {},
     },
   },
-  components: { Button, Field, Form, ErrorMessage },
+  components: { Button, Field, ErrorMessage },
   methods: {
     ...ErrorMsgFunc,
   },

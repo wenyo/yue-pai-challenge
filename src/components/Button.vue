@@ -1,5 +1,5 @@
 <template>
-  <button :class="`${type} ${name}`" @click="click_fun">
+  <button :class="`${style} ${name}`" :type="type" @click="click_fun" :disabled="disabled">
     <slot></slot>
   </button>
 </template>
@@ -12,15 +12,22 @@ export default {
       type: String,
       default: '',
     },
-    type: {
+    style: {
       type: String,
       default: BUTTON_TYPE.MASTER,
       validator(value) {
         return Object.values(BUTTON_TYPE).includes(value);
       },
     },
+    type: {
+      type: String,
+      default: 'button',
+    },
     click_fun: {
       type: Function,
+    },
+    disabled: {
+      type: Boolean,
     },
   },
   data() {
