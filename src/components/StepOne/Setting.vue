@@ -8,13 +8,14 @@
         <span>分組數</span>
         <span>道數</span>
       </li>
-      <SettingItem />
+      <SettingItem v-for="(gameInfo, key) in gameDetail" :key="key" :gameInfo="gameInfo" />
     </ul>
     <Button class="add" :type="BUTTON_TYPE.FIVE" :click_fun="() => {}">+</Button>
   </div>
 </template>
 
 <script>
+import { mapFields } from 'vuex-map-fields';
 import { BUTTON_TYPE } from '../../utils/Enum';
 import SettingItem from './SettingItem.vue';
 import Button from '../Button.vue';
@@ -26,6 +27,9 @@ export default {
     };
   },
   components: { SettingItem, Button },
+  computed: {
+    ...mapFields(['gameDetail']),
+  },
 };
 </script>
 

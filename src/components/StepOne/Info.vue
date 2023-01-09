@@ -3,7 +3,8 @@
     <div>
       <Form>
         <span>賽事類型</span>
-        <select name="" id="">
+        <select name="" id="" v-model="type">
+          <option value="">請選擇</option>
           <option v-for="(type, key) in CONTEST_TYPE" :value="key" :key="key">{{ type.ch }}</option>
         </select>
       </Form>
@@ -11,7 +12,8 @@
     <div>
       <Form>
         <span>賽事模式</span>
-        <select name="" id="">
+        <select name="" id="" v-model="mode">
+          <option value="">請選擇</option>
           <option v-for="(mode, key) in CONTEST_MODE" :value="key" :key="key">{{ mode.ch }}</option>
         </select>
       </Form>
@@ -19,21 +21,22 @@
     <div>
       <Form>
         <span>賽事名稱</span>
-        <Field type="text" name="name" :rules="isRequired" />
+        <Field type="text" name="name" :rules="isRequired" v-model="contestName" />
         <ErrorMessage class="error-message" name="name" />
       </Form>
     </div>
     <div>
       <Form>
         <span>參賽人數/隊伍</span>
-        <Field type="number" name="count" min="0" :rules="isRequired && isNaturalNumber" />
+        <Field type="number" name="count" min="0" :rules="isRequired && isNaturalNumber" v-model="count" />
         <ErrorMessage class="error-message" name="count" />
       </Form>
     </div>
     <div>
       <Form>
         <span>成績單位</span>
-        <select name="" id="">
+        <select name="" id="" v-model="unit">
+          <option value="">請選擇</option>
           <option v-for="(unit, key) in UNIT_TYPE" :value="key" :key="key">{{ unit.ch }}</option>
         </select>
       </Form>
@@ -52,7 +55,8 @@
 
 <script>
 import { ref } from 'vue';
-import { mapMutations, mapState } from 'vuex';
+import { mapFields } from 'vuex-map-fields';
+import { mapMutations } from 'vuex';
 import { Field, Form, ErrorMessage } from 'vee-validate';
 import { CONTEST_TYPE, CONTEST_MODE, UNIT_TYPE, BUTTON_TYPE } from '../../utils/Enum';
 import ErrorMsgFunc from '../../utils/ErrorMsg';
@@ -77,7 +81,7 @@ export default {
     };
   },
   computed: {
-    ...mapState(['imgBase64']),
+    ...mapFields(['type', 'contestName', 'unit', 'imgBase64', 'mode', 'count']),
   },
   methods: {
     ...ErrorMsgFunc,
@@ -91,14 +95,14 @@ export default {
       var reader = new FileReader();
       reader.readAsDataURL(file);
       reader.onload = () => {
-        this.imgBase64Change({ img: reader.result });
+        this.imgBase64 = reader.result;
       };
       reader.onerror = (error) => {
         console.error('Error: ', error);
       };
     },
     resetImg() {
-      this.imgBase64Change({ img: '' });
+      this.imgBase64 = '';
       this.uploadImage.value = null;
     },
   },

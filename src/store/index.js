@@ -1,14 +1,17 @@
 import { createStore } from 'vuex';
+import { getField, updateField } from 'vuex-map-fields';
 
 const store = createStore({
   state: {
     type: '', // CONTEST_TYPE
     contestName: '',
     unit: '', // UNIT_TYPE
+    mode: '', //CONTEST_MODE
     imgBase64: '',
+    count: 0,
     gameDetail: [
       {
-        type: '', // GAME_TYPE
+        gameName: '',
         count_Q: 0,
         count_q: 0,
         teamCount: 0,
@@ -19,6 +22,7 @@ const store = createStore({
       {
         name: '',
         id: '',
+        member: [],
       },
     ],
     contestInfo: [
@@ -40,9 +44,13 @@ const store = createStore({
     ],
   },
   mutations: {
+    updateField,
     imgBase64Change(state, { img }) {
       state.imgBase64 = img;
     },
+  },
+  getters: {
+    getField,
   },
 });
 

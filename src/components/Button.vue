@@ -40,6 +40,7 @@ button {
   border-radius: 2px;
   font-weight: bold;
   height: 30px;
+  white-space: nowrap;
   cursor: pointer;
 
   &:disabled,

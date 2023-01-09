@@ -1,24 +1,24 @@
 <template>
   <li>
     <Form>
-      <Field type="text" name="level" :rules="isRequired" />
-      <ErrorMessage class="error-message" name="level" />
+      <Field type="text" name="gameName" :rules="isRequired" v-model="gameInfo.gameName" />
+      <ErrorMessage class="error-message" name="gameName" />
     </Form>
     <Form>
-      <Field type="number" name="QTeam" :rules="isRequired && isNaturalNumber" />
-      <ErrorMessage class="error-message" name="QTeam" />
+      <Field type="number" name="count_Q" :rules="isRequired && isNaturalNumber" v-model="gameInfo.count_Q" />
+      <ErrorMessage class="error-message" name="count_Q" />
     </Form>
     <Form>
-      <Field type="number" name="qTeam" :rules="isRequired && isNaturalNumber" />
-      <ErrorMessage class="error-message" name="qTeam" />
+      <Field type="number" name="count_q" :rules="isRequired && isNaturalNumber" v-model="gameInfo.count_q" />
+      <ErrorMessage class="error-message" name="count_q" />
     </Form>
     <Form>
-      <Field type="number" name="game-count" :rules="isRequired && isNaturalNumber" />
-      <ErrorMessage class="error-message" name="game-count" />
+      <Field type="number" name="teamCount" :rules="isRequired && isNaturalNumber" v-model="gameInfo.teamCount" />
+      <ErrorMessage class="error-message" name="teamCount" />
     </Form>
     <Form>
-      <Field type="number" name="row-count" :rules="isRequired && isNaturalNumber" />
-      <ErrorMessage class="error-message" name="row-count" />
+      <Field type="number" name="track" :rules="isRequired && isNaturalNumber" v-model="gameInfo.track" />
+      <ErrorMessage class="error-message" name="track" />
     </Form>
     <Button class="delete" :type="BUTTON_TYPE.SIX" :click_fun="() => {}">x</Button>
   </li>
@@ -35,6 +35,12 @@ export default {
     return {
       BUTTON_TYPE,
     };
+  },
+  props: {
+    gameInfo: {
+      type: Object,
+      default: {},
+    },
   },
   components: { Button, Field, Form, ErrorMessage },
   methods: {
